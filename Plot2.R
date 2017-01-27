@@ -16,4 +16,6 @@ testdata[["Date"]]<-dates
 
 ##PLOT 2
 testdata$datetime <- as.POSIXct(paste(testdata$Date, testdata$Time), tz = "UTC")
+png(filename = "Plot2.png", width = 480, height = 480, units = "px", pointsize = 12, bg = "white", res = NA, restoreConsole = TRUE)
 plot(testdata$datetime, testdata$Global_active_power, type = "l", xlab ="", ylab = "Global Active Power (kilowatts)")
+dev.off()
