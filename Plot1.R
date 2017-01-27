@@ -16,4 +16,6 @@ testdata[["Time"]]<-times
 
 ##PLOT 1
 GAP <- testdata$Global_active_power
+png(filename = "Plot1.png", width = 480, height = 480, units = "px", pointsize = 12, bg = "white", res = NA, restoreConsole = TRUE)
 hist(GAP, xlab = "Global Active Power (kilowatts)", main = "Global Active Power", col = "red")
+dev.off()
