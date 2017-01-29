@@ -15,10 +15,13 @@ testdata[["Date"]]<-dates
 
 
 ##PLOT 3
-testdata$datetime <- as.POSIXct(paste(testdata$Date, testdata$Time), tz = "UTC")
+ testdata$datetime <- as.POSIXct(paste(testdata$Date, testdata$Time), tz = "UTC")
+png(filename = "Plot3.png", width = 480, height = 480, units = "px", pointsize = 12, bg = "white", res = NA, restoreConsole = TRUE)
+
 plot(testdata$datetime, testdata$Sub_metering_1, type = "n", xlab ="", ylab = "Global Active Power (kilowatts)")
 lines(testdata$datetime, testdata$Sub_metering_1)
 lines(testdata$datetime, testdata$Sub_metering_2, col = "red")
 lines(testdata$datetime, testdata$Sub_metering_3, col = "blue")
 
 legend(x="topright", c("Sub_metering_1", "Sub_metering_2", "sub_metering_3"), lty= c(1.5,1.5,1.5), lwd= c(1, 1, 1), col = c("black", "red", "blue"))
+dev.off()
